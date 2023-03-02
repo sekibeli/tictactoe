@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -7,9 +15,16 @@ tr {
 }
 
 td {
+ 
+    position: relative;
     width: 133px;
     height: 133px;
-    border: 2px solid black;
+    border: 4px solid black;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgba(176, 246, 156, 0.2);
 }
 
 tr:first-child td {
@@ -26,4 +41,35 @@ tr:last-child td {
 
 tr td:last-child {
     border-right: 0;
+}
+
+.shape {
+ position: absolute;
+ left: 20px;   
+ top: 20px;
+}
+
+.d-none {
+    display: none;
+}
+.playerPanel {
+    display: flex;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+.playerPanel div {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+   
+}
+.playerPanel img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+.playerInactive {
+    opacity: 0.3;
 }
