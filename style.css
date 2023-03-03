@@ -8,6 +8,13 @@ body {
 
 table {
     border-collapse: collapse;
+    width: 300px;
+    height: 300px;
+
+   
+}
+.table {
+    position: relative;
 }
 tr {
     width: 399px;
@@ -17,8 +24,8 @@ tr {
 td {
  
     position: relative;
-    width: 133px;
-    height: 133px;
+    width: 100px;
+    height: 100px;
     border: 4px solid black;
     cursor: pointer;
 }
@@ -45,8 +52,8 @@ tr td:last-child {
 
 .shape {
  position: absolute;
- left: 20px;   
- top: 20px;
+ left: 0px;   
+ top: 3px;
 }
 
 .d-none {
@@ -72,4 +79,28 @@ tr td:last-child {
 
 .playerInactive {
     opacity: 0.3;
+}
+
+.horizontal-line {
+    height:10px;
+    background-color: rgba(0   , 0, 0, 0.2);
+    width: 300px;
+    position : absolute;
+    /* transform: scale(0.0); */
+    transition: transform 225ms ease-in-out;
+   
+}
+
+.make-vertical {
+    transform: rotate(90deg) ;
+    
+}
+
+.make-diagonally {
+  
+    transform:  rotate(45deg); 
+}
+.make-oposite-diagonally {
+    transform:  rotate(135deg) ;
+  
 }
