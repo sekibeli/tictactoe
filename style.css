@@ -62,8 +62,10 @@ tr td:last-child {
 }
 .playerPanel {
     display: flex;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 32px;
+    width: 320px;
+    justify-content: center;
 }
 .playerPanel div {
     display: flex;
@@ -75,7 +77,7 @@ tr td:last-child {
 .playerPanel img {
     width: 60px;
     height: 60px;
-    margin-right: 16px;
+    margin-right: 10px;
 }
 
 .playerInactive {

@@ -1,6 +1,6 @@
 let fields = [];
 
-let currentShape = 'cross'
+let currentShape = 'cross';
 let gameOver = false;
 function fillShape(id){
 
@@ -85,6 +85,7 @@ function restart(){
     document.getElementById('gameOver').classList.add('d-none');
     document.getElementById('button').classList.add('d-none'); 
     fields = [];
+    currentShape = 'cross';
 
    for (let i=0; i<9; i++){
                    document.getElementById(`circle-${i}`).classList.add('d-none');
