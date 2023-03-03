@@ -50,23 +50,23 @@ function checkForWin(){
     }
     if(fields[0] == fields[3] && fields[3] == fields[6]&& fields[0]){
         winner = fields[0]
-        document.getElementById('win5').style.transform = 'scaleX(1)';;
+        document.getElementById('win4').style.transform = 'rotate(90deg) scaleX(1)';
     }
     if(fields[1] == fields[4] && fields[4] == fields[7]&& fields[1]){
         winner = fields[1]
-        document.getElementById('win4').style.transform = 'scaleX(1)';
+        document.getElementById('win5').style.transform = 'rotate(90deg) scaleX(1)';
     }
     if(fields[2] == fields[5] && fields[5] == fields[8]&& fields[2]){
         winner = fields[2]
-        document.getElementById('win6').style.transform = 'scaleX(1)';
+        document.getElementById('win6').style.transform = 'rotate(90deg) scaleX(1)';
     }
     if(fields[0] == fields[4] && fields[4] == fields[8]&& fields[0]){
         winner = fields[0]
-        document.getElementById('win7').style.transform = 'scaleX(1)';
+        document.getElementById('win7').style.transform = 'rotate(45deg) scaleX(1)';
     }
     if(fields[2] == fields[4] && fields[4] == fields[6]&& fields[2]){
         winner = fields[2]
-        document.getElementById('win8').style.transform = 'scaleX(1)';
+        document.getElementById('win8').style.transform = 'rotate(-45deg) scaleX(1)';
     }
 console.log(winner);
     if (winner){
@@ -79,3 +79,10 @@ function changePlayer(activePlayer, inactivePlayer){
     document.getElementById(inactivePlayer).classList.add('playerInactive');
     document.getElementById(activePlayer).classList.remove('playerInactive');
 }
+
+function randomIntFromInterval() { // min and max included 
+    return Math.floor(Math.random() * (8 - 0 + 1) + 0)
+  }
+  
+  const rndInt = randomIntFromInterval()
+  console.log(rndInt)

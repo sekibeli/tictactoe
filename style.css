@@ -52,7 +52,7 @@ tr td:last-child {
 
 .shape {
  position: absolute;
- left: 0px;   
+ left: 2px;   
  top: 3px;
 }
 
@@ -61,7 +61,7 @@ tr td:last-child {
 }
 .playerPanel {
     display: flex;
-    font-size: 32px;
+    font-size: 24px;
     margin-bottom: 32px;
 }
 .playerPanel div {
@@ -86,21 +86,21 @@ tr td:last-child {
     background-color: rgba(0   , 0, 0, 0.2);
     width: 300px;
     position : absolute;
-    /* transform: scale(0.0); */
+    transform: scale(0.0);
     transition: transform 225ms ease-in-out;
    
 }
 
 .make-vertical {
-    transform: rotate(90deg) ;
+    transform: rotate(90deg) scaleX(0) ;
     
 }
 
 .make-diagonally {
   
-    transform:  rotate(45deg); 
+    transform:  rotate(45deg) scaleX(0); 
 }
 .make-oposite-diagonally {
-    transform:  rotate(135deg) ;
+    transform:  rotate(-45deg) scaleX(0) ;
   
 }
