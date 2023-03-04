@@ -19,7 +19,7 @@ function fillShape(id) {
         if (!gameOver) {
             setTimeout(function () {
                 pcTurn();
-            }, 1000);
+            }, 500);
         }
         console.log(fields);
 
