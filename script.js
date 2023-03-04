@@ -123,6 +123,9 @@ function restart() {
     fields = [];
     currentShape = 'cross';
 
+    document.getElementById('player1').classList.remove('playerInactive');
+    document.getElementById('player2').classList.add('playerInactive');
+
     for (let i = 0; i < 9; i++) {
         document.getElementById(`circle-${i}`).classList.add('d-none');
         document.getElementById(`cross-${i}`).classList.add('d-none');
