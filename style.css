@@ -70,7 +70,7 @@ tr td:last-child {
 }
 .playerPanel {
     display: flex;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 32px;
     width: 320px;
     justify-content: center;
@@ -156,9 +156,9 @@ tr td:last-child {
 .restartBtn {
     position:absolute;
     top: 334px;
-    left: 103px;
-    right: 80px;
-    z-index: 3;
+    left: 161px;
+    right: 114px;
+    z-index: 10;
     cursor: pointer;
     width: 100px;
     height: 50px;
@@ -170,6 +170,26 @@ tr td:last-child {
 }
 
 .restartBtn:hover {
+    background-color: #0344a4;
+}
+
+.newPlayerBtn {
+    position:absolute;
+    top: 334px;
+    left: 35px;
+    right: 80px;
+    z-index: 10;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background-color: #0057D6;
+    color: white;
+    border-radius: 10px;
+
+
+}
+
+.newPlayerBtn:hover {
     background-color: #0344a4;
 }
 
@@ -198,3 +218,27 @@ tr td:last-child {
     top: -100px;
 }
 
+#name {
+    z-index: 20;
+    background-color: #4686e7;
+    position:absolute;
+    top: -100px;
+    left:0;
+    right: 0;
+    height: 420px;
+    width: 300px;
+}
+
+#yourName {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 40px;
+    width: 200px;
+}
+
+#sendName{
+    width: 224px;
+    margin-left: 40px;
+}

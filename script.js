@@ -4,9 +4,11 @@ let amountCircles = 0;
 let currentShape = 'cross';
 let gameOver = false;
 let winner = '';
+let player = '';
 
 
 function fillShape(id) {
+  
     if (!fields[id] && !gameOver) {
         currentShape = 'circle';
         fields[id] = currentShape;
@@ -92,7 +94,7 @@ function restart() {
 
 function nameOfWinner(winner) {
     if (winner == 'circle') {
-        winner = 'You';
+        winner = player;
     } else {
         winner = 'DumbPC';
     }
@@ -189,6 +191,7 @@ function showWinner() {
     setTimeout(function () {
         document.getElementById('winner').classList.remove('d-none');
         document.getElementById('button').classList.remove('d-none');
+        document.getElementById('newPlay').classList.remove('d-none');
         document.getElementById('whoWon').innerHTML = `${nameOfWinner(winner)} won!`;
         document.getElementById('whoWon').classList.remove('d-none');
     }, 1000);
@@ -206,6 +209,7 @@ function resetDisplay() {
     gameOver = false;
     document.getElementById('winner').classList.add('d-none');
     document.getElementById('button').classList.add('d-none');
+    document.getElementById('newPlay').classList.add('d-none');
     document.getElementById('whoWon').classList.add('d-none');
     fields = [];
     currentShape = 'cross';
@@ -223,4 +227,22 @@ function resetFields() {
     for (let i = 1; i < 9; i++) {
         document.getElementById(`win${i}`).style.transform = 'scale(0)';
     }
+}
+
+function readName(){
+   
+    player = document.getElementById('yourName').value;
+document.getElementById('player').innerHTML = player;
+hideInputField();
+
+restart();
+document.getElementById('yourName').value = '';
+}
+
+function hideInputField(){
+    document.getElementById('name').classList.add('d-none');
+}
+
+function newPlayer(){
+    document.getElementById('name').classList.remove('d-none');
 }
