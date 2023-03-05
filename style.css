@@ -9,6 +9,11 @@ body {
     margin: 0;
     padding: 0;
 }
+.header {
+    color:#0344a4;
+    font-size: 32px;
+    padding-bottom: 25px;
+}
 
 table {
     border-collapse: collapse;
