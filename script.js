@@ -8,7 +8,6 @@ let winner = '';
 
 function fillShape(id) {
     if (!fields[id] && !gameOver) {
-
         currentShape = 'circle';
         fields[id] = currentShape;
         draw();
@@ -17,14 +16,23 @@ function fillShape(id) {
         document.getElementById('player2').classList.remove('playerInactive');
 
         if (!gameOver) {
+            switchIt('none');
             setTimeout(function () {
                 pcTurn();
             }, 500);
+         
         }
         console.log(fields);
-
     }
+  delay();
 }
+
+function delay(){
+    setTimeout(function () {
+        switchIt('auto');
+    }, 500);
+}
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -42,6 +50,13 @@ function pcTurn() {
     checkForWin();
     document.getElementById('player1').classList.remove('playerInactive');
     document.getElementById('player2').classList.add('playerInactive');
+}
+
+
+function switchIt(param) {
+    for (let i = 0; i < 9; i++) {
+        document.getElementById(`field${i}`).style.pointerEvents = param;
+    }
 }
 
 
@@ -96,11 +111,12 @@ function checkForWin() {
     console.log(winner);
     checkForCircle();
     if (winner) {
+        switchIt('none');
         console.log('gewonnen:', winner);
         gameOver = true;
         nameOfWinner(winner);
         setTimeout(function () {
-            document.getElementById('gameOver').classList.remove('d-none');
+             document.getElementById('winner').classList.remove('d-none');
             document.getElementById('button').classList.remove('d-none');
             document.getElementById('whoWon').innerHTML = `${nameOfWinner(winner)} won!`;
             document.getElementById('whoWon').classList.remove('d-none');
@@ -109,6 +125,7 @@ function checkForWin() {
     }
 
     if (amountCircles == 5) {
+        switchIt('none');
         showUndecided();
     }
 }
@@ -117,7 +134,7 @@ function checkForWin() {
 
 function restart() {
     gameOver = false;
-    document.getElementById('gameOver').classList.add('d-none');
+    document.getElementById('winner').classList.add('d-none');
     document.getElementById('button').classList.add('d-none');
     document.getElementById('whoWon').classList.add('d-none');
     fields = [];
@@ -134,6 +151,7 @@ function restart() {
     for (let i = 1; i < 9; i++) {
         document.getElementById(`win${i}`).style.transform = 'scale(0)';
     }
+    switchIt('auto');
 }
 
 
@@ -161,7 +179,7 @@ function checkForCircle() {
 function showUndecided() {
     gameOver = true;
     setTimeout(function () {
-        document.getElementById('gameOver').classList.remove('d-none');
+        document.getElementById('winner').classList.remove('d-none');
         document.getElementById('button').classList.remove('d-none');
         document.getElementById('whoWon').innerHTML = `nobody won!`;
         document.getElementById('whoWon').classList.remove('d-none');
