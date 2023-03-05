@@ -5,6 +5,7 @@ let currentShape = 'cross';
 let gameOver = false;
 let winner = '';
 let player = '';
+let AUDIO = new Audio('tap.mp3');
 
 
 function fillShape(id) {
@@ -13,7 +14,7 @@ function fillShape(id) {
         currentShape = 'circle';
         fields[id] = currentShape;
         playersTurn();
-        setPlayer2Active()
+        setPlayerIn_Active('player2', 'player1');
         if (!gameOver) {
             switchIt('none');
             setTimeout(function () { pcTurn(); }, 500);
@@ -44,9 +45,10 @@ function pcTurn() {
     if (!fields[random] && counter < 9)
         fields[random] = currentShape;
     else pcTurn();
+    AUDIO.play();
     draw();
     checkForWin();
-    setPlayer1Active();
+    setPlayerIn_Active('player1', 'player2');
 }
 
 
@@ -124,19 +126,14 @@ function showUndecided() {
 }
 
 
-function setPlayer2Active() {
-    document.getElementById('player1').classList.add('playerInactive');
-    document.getElementById('player2').classList.remove('playerInactive');
-}
-
-
-function setPlayer1Active() {
-    document.getElementById('player1').classList.remove('playerInactive');
-    document.getElementById('player2').classList.add('playerInactive');
+function setPlayerIn_Active(player1, player2){
+    document.getElementById(`${player1}`).classList.remove('playerInactive');
+    document.getElementById(`${player2}`).classList.add('playerInactive');
 }
 
 
 function playersTurn() {
+    AUDIO.play();
     draw();
     checkForWin();
 }
@@ -214,7 +211,7 @@ function resetDisplay() {
     fields = [];
     currentShape = 'cross';
     winner = '';
-    setPlayer1Active();
+   setPlayerIn_Active('player1', 'player2');
 }
 
 
