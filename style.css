@@ -19,20 +19,17 @@ table {
     border-collapse: collapse;
     width: 300px;
     height: 300px;
-
-   
 }
+
 .table {
     position: relative;
 }
 tr {
     width: 399px;
-
 }
 
 td {
- 
-    position: relative;
+     position: relative;
     width: 100px;
     height: 100px;
     border: 4px solid black;
@@ -127,32 +124,6 @@ tr td:last-child {
     animation: zoomIn 250ms ease-in-out;
 }
 
-@keyframes zoomIn {
-    0% {
-        width: 50px;
-        height:50px;
-        rotate: -360deg;
-        opacity:0;
-        transform: scale(0);
-    }
-
-    50% {
-        width: 200px;
-        height:200px;
-        rotate: 0deg;
-        opacity:0.7;
-        transform: scale(0.7);
-    }
-
-    100%{
-        width: 320px;
-        height: 320px;
-        rotate: 360deg;
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 .restartBtn {
     position:absolute;
     top: 334px;
@@ -165,8 +136,6 @@ tr td:last-child {
     background-color: #0057D6;
     color: white;
     border-radius: 10px;
-
-
 }
 
 .restartBtn:hover {
@@ -185,8 +154,6 @@ tr td:last-child {
     background-color: #0057D6;
     color: white;
     border-radius: 10px;
-
-
 }
 
 .newPlayerBtn:hover {
@@ -239,6 +206,16 @@ tr td:last-child {
 }
 
 #sendName{
+    border: none;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 224px;
     margin-left: 40px;
+    background-color: #01337d;
+    color: white;
+}
+
+#sendName:hover {
+    background-color: #0057D6;
 }

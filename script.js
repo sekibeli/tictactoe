@@ -9,7 +9,7 @@ let AUDIO = new Audio('tap.mp3');
 
 
 function fillShape(id) {
-  
+
     if (!fields[id] && !gameOver) {
         currentShape = 'circle';
         fields[id] = currentShape;
@@ -17,7 +17,7 @@ function fillShape(id) {
         setPlayerIn_Active('player2', 'player1');
         if (!gameOver) {
             switchIt('none');
-            setTimeout(function () { pcTurn(); }, 500);
+            setTimeout(function () { pcTurn(); }, 700);
         }
     }
     delay();
@@ -122,11 +122,12 @@ function showUndecided() {
         document.getElementById('button').classList.remove('d-none');
         document.getElementById('whoWon').innerHTML = `nobody won!`;
         document.getElementById('whoWon').classList.remove('d-none');
+        document.getElementById('newPlay').classList.remove('d-none');
     }, 1000);
 }
 
 
-function setPlayerIn_Active(player1, player2){
+function setPlayerIn_Active(player1, player2) {
     document.getElementById(`${player1}`).classList.remove('playerInactive');
     document.getElementById(`${player2}`).classList.add('playerInactive');
 }
@@ -211,7 +212,7 @@ function resetDisplay() {
     fields = [];
     currentShape = 'cross';
     winner = '';
-   setPlayerIn_Active('player1', 'player2');
+    setPlayerIn_Active('player1', 'player2');
 }
 
 
@@ -226,20 +227,20 @@ function resetFields() {
     }
 }
 
-function readName(){
-   
+function readName() {
     player = document.getElementById('yourName').value;
-document.getElementById('player').innerHTML = player;
-hideInputField();
-
-restart();
-document.getElementById('yourName').value = '';
+    document.getElementById('player').innerHTML = player;
+    hideInputField();
+    restart();
+    document.getElementById('yourName').value = '';
 }
 
-function hideInputField(){
+
+function hideInputField() {
     document.getElementById('name').classList.add('d-none');
 }
 
-function newPlayer(){
+
+function newPlayer() {
     document.getElementById('name').classList.remove('d-none');
 }
